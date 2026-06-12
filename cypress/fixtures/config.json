@@ -1,0 +1,12 @@
+{
+  "url": "https://practice.qabrains.com/",
+  "browser": "chrome",
+  "headless": false,
+  "timeout": 10000,
+  "pageLoadTimeout": 30000,
+  "valid_email": "qa_testers@qabrains.com",
+  "valid_password": "Password123",
+  "screenshotOnFailure": true,
+  "retryFailedTests": true,
+  "parallelExecution": false
+}

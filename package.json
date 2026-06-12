@@ -1,0 +1,35 @@
+{
+  "name": "qabrains-cypress",
+  "version": "1.0.0",
+  "description": "QaBrains Automation - Cypress + Cucumber (converted from Playwright + Java)",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:smoke": "cypress run --env tags=@smoke",
+    "test:regression": "cypress run --env tags=@regression",
+    "open": "cypress open",
+    "report": "node reporter.js",
+    "test:report": "cypress run && node reporter.js"
+  },
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.1.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.2",
+    "cypress": "^15.16.0",
+    "esbuild": "^0.20.2",
+    "multiple-cucumber-html-reporter": "^3.10.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/e2e/step_definitions/**/*.js",
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "json": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-json/[hash].json"
+    },
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html/cucumber-report.html"
+    }
+  }
+}
